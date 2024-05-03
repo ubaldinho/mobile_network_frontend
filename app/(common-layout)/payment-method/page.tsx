@@ -13,6 +13,9 @@ const page = () => {
   const all_features = [
     'feature 1 with it s full description for all details',
     'feature 2 with it s full description for all details',
+    'feature 4 with it s full description for all details',
+    'feature 5 with it s full description for all details',
+
     'feature 3 with it s full description for all details' 
   ]
   
