@@ -1,5 +1,4 @@
 "use client";
-import Navbar from "./Navbar";
 import { useEffect, useState } from "react";
 import LangDropdown from "./LangDropdown";
 import NotificationDropdown from "./NotificationDropdown";
@@ -38,7 +37,8 @@ const CommonHeader = () => {
             <i className="las la-bars text-2xl"></i>
           </button>
           <div className={`lg:block ${menuOpen ? "block" : "hidden"}`}>
-            <Navbar />
+            {//<Navbar />
+            }
           </div>
         </div>
       </div>

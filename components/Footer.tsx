@@ -13,9 +13,8 @@ const Footer = () => {
                 <Image src={logolight} alt="image" className="" />
               </Link>
               <p className="clr-neutral-30 mb-6">
-                Real estate can be bought, sold, leased, or rented, and can be a
-                valuable investment opportunity. The value of real estate can
-                be...
+                The future of transport , providin a high quality of service and can be a
+                valuable investment opportunity. The value of the benefits is exponentially increasing...
               </p>
               <ul className="flex gap-3 flex-wrap">
                 <li>
@@ -101,8 +100,8 @@ const Footer = () => {
                 <li>
                   <div className="flex items-center gap-4">
                     <i className="las la-phone-volume bg-primary text-white text-xl p-2 rounded-full"></i>
-                    <Link href="tel:3165550116" className="mb-0 clr-neutral-30">
-                      (316) 555-0116
+                    <Link href="tel:656461173" className="mb-0 clr-neutral-30">
+                      (+237) 656461173
                     </Link>
                   </div>
                 </li>
@@ -112,7 +111,7 @@ const Footer = () => {
                     <Link
                       href="mailto:example@mail.com"
                       className="mb-0 clr-neutral-30">
-                      example@mail.com
+                      ubaldi@gmail.com
                     </Link>
                   </div>
                 </li>
@@ -120,7 +119,7 @@ const Footer = () => {
                   <div className="flex items-center gap-4">
                     <i className="las la-map-marker-alt bg-[var(--tertiary)] text-[var(--neutral-700)] text-xl p-2 rounded-full"></i>
                     <p className="mb-0 clr-neutral-30">
-                      31 Brandy Way, Sutton, SM2 6SE
+                      31e Rue Nord, Essos, Station Bocom
                     </p>
                   </div>
                 </li>
