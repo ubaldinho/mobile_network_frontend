@@ -25,35 +25,33 @@ const HeaderTop = () => {
         </Link>
         <div className="flex divide-x-[1px]">
           <div className="flex items-center gap-5 px-2 xl:px-4">
-            <i className="las la-phone-volume bg-primary text-white text-2xl p-2 rounded-full"></i>
+            <img src="/img/whatsapp-icon.png" alt="oups!" className="w-50 h-50"></img>
             <div className="flex-col hidden lg:flex">
-              <span className="text-xs">Free Call</span>
-              <Link href="tel:4065550120" className="text-base">
-                (406) 555-0120
+              <span className="text-xs"> Whatsapp Message</span>
+              <Link href="tel:+237 653251792" className="text-base">
+                (+237) 653251792
               </Link>
             </div>
           </div>
-          {/* <span className='inline-block h-full w-[1px] bg-[var(--border)]'></span> */}
           <div className="flex items-center gap-5 px-2 xl:px-4">
             <i className="las la-envelope-open bg-[var(--secondary)] text-[var(--neutral-700)] text-2xl p-2 rounded-full"></i>
             <div className="flex-col hidden lg:flex">
-              <span className="text-xs">Online Support</span>
+              <span className="text-xs">Our Mail</span>
               <Link href="mailto:debra.holt@example.com" className="text-base">
-                debra.holt@example.com
+                ubaldi.leo@gmail.com
               </Link>
             </div>
           </div>
-          {/* <span className='inline-block h-full w-[1px] bg-[var(--border)]'></span> */}
           <div className="flex items-center gap-5 px-2 xl:px-4">
             <i className="las la-map-marker-alt bg-[var(--tertiary)] text-[var(--neutral-700)] text-2xl p-2 rounded-full"></i>
             <div className="flex-col hidden lg:flex">
               <span className="text-xs">Our Location</span>
-              <span className="text-base">3605 Parker Rd.</span>
+              <span className="text-base">Rue Melen , Pharmacie Emia</span>
             </div>
           </div>
         </div>
-        <Link href="/add-property" className="btn-primary-lg hidden md:block">
-          Submit Property
+        <Link href="/Mobile-App" className="btn-primary-lg hidden md:block">
+          Mobile App
         </Link>
       </div>
     </div>

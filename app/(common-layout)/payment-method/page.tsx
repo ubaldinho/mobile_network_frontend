@@ -1,3 +1,4 @@
+import _features from "@/datas/features";
 import Link from "next/link";
 
 const page = () => {
@@ -18,6 +19,8 @@ const page = () => {
 
     'feature 3 with it s full description for all details' 
   ]
+_features
+  
   
   return (
     <div className="py-[30px] lg:py-[60px] bg-[var(--bg-2)] px-3">
