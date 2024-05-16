@@ -214,7 +214,7 @@ total_payable_amount= parseFloat(total_payable_amount.toFixed(3))
               </div>
               <Link
                 href="#"
-                className="link inline-flex items-center gap-2 py-3 px-6 rounded-full bg-primary text-white :bg-primary-400 hover:text-white font-medium w-full justify-center"
+                className="link inline-flex items-center gap-2 py-3 px-6 rounded-full bg-primary text-white :bg-primary-400 hover:text-white font-medium w-full justify-center active:animate-bounce"
               >
                 <span className="inline-block"> Payment </span>
               </Link>
