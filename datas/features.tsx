@@ -65,4 +65,6 @@ const _features_d_v: { [key: string]: any } = {
   },
   
 };
+
 export default _features_d;
+
