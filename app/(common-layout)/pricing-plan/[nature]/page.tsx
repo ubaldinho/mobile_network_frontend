@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import PaySwitch from "@/components/PaySwitch";
 import SubHeadingBtn from "@/components/SubHeadingBtn";
+import _features from "@/datas/features";
 import brand1 from "@/public/img/brand-1.png";
 import brand2 from "@/public/img/brand-2.png";
 import brand3 from "@/public/img/brand-3.png";
@@ -23,7 +24,9 @@ import "swiper/css/pagination";
 
 const Page = ({params}: {params : {nature : string} }) => {
   const [activeButton, setActiveButton] = useState(0);
-
+const basic = _features["basic"]
+const standart = _features["standart"]
+const premium = _features["premium"]
   const handleButtonClick = (index: number) => {
     setActiveButton(index);
   };
@@ -93,11 +96,11 @@ const terms = params.nature.replaceAll('_', ' ')
         onClick={() => handleButtonClick(3)}
         isActive={activeButton === 3}
       />
-      <PaySwitch
+      {/* <PaySwitch
         label="semiannually"
         onClick={() => handleButtonClick(6)}
         isActive={activeButton === 6}
-      />
+      /> */}
       <PaySwitch
         label="annually"
         onClick={() => handleButtonClick(12)}
@@ -120,10 +123,10 @@ const terms = params.nature.replaceAll('_', ' ')
         </div>
         <div className="container">
           <div className="grid grid-cols-12 g-3 md:gap-0 overflow-hidden">
-            <div className="col-span-12 md:col-span-6 lg:col-span-4 m-3">
+            <div className="col-span-12 md:col-span-6 lg:col-span-4 m-3 h-800">
               <div className="bg-white p-6">
                 <div className="text-center">
-                  <div className="grid place-content-center w-20 h-20 rounded-full bg-[var(--bg-2)] mb-3 mx-auto">
+                  {/* <div className="grid place-content-center w-20 h-20 rounded-full bg-[var(--bg-2)] mb-3 mx-auto">
                     <Image
                       width={56}
                       height={56}
@@ -131,35 +134,34 @@ const terms = params.nature.replaceAll('_', ' ')
                       alt="image"
                       className=""
                     />
-                  </div>
+                  </div> */}
                   <p className="mb-0 text-2xl font-medium text-primary">
                     Basic
                   </p>
                   <div className="border border-dashed mt-8 mb-4"></div>
                   <h1 className="h2 clr-primary-400 mb-2 text-xl"> { 2500*activeButton} FCFA / {activeButton} month </h1>
                   <p className="m-1" >
-                  Essential offer to start your driver business. Benefit from platform access and basic customer support.                  </p>
-                  
+                  {basic.content}                  
+                   </p>
                   <div className="border border-dashed mt-4 mb-8"></div>
                   <ul className="flex flex-col gap-4 max-text-30 mx-auto mb-8">
                     <li className="flex items-center text-2xl gap-2">
-                      <i className="las la-check-circle text-[var--primary)]"></i>
+                      <i className="las la-check-circle text-primary"></i>
                       <p className="mb-0 text-lg text-start">
-                      A One-Star-class vehicle is made available to you.
+                      {basic.description[0]}
                       </p>
                     </li>
                     <li className="flex items-center text-2xl gap-2">
-                      <i className="las la-check-circle text-[var--primary)]"></i>
-                      <p className="mb-0 text-lg text-start"> Access to 5 hours of work per day upon your initial login.
-These working hours are flexible and can be accumulated. </p>
+                      <i className="las la-check-circle text-primary"></i>
+                      <p className="mb-0 text-lg text-start"> {basic.description[1]}</p>
                     </li>
                     <li className="flex items-center text-2xl gap-2">
-                      <i className="las la-check-circle text-[var--primary)]"></i>
+                      <i className="las la-check-circle text-primary"></i>
                       <p className="mb-0 text-lg text-start">
-                        Minimum Technology support
+                      {basic.description[2]}
                       </p>
                     </li>
-                    <li className="flex items-center text-2xl gap-2">
+                    {/* <li className="flex items-center text-2xl gap-2">
                       <i className="las la-check-circle text-[var--primary)]"></i>
                       <p className="mb-0 text-lg text-start">
                       A personalized profile with a photo and vehicle information is provided.
@@ -176,18 +178,18 @@ These working hours are flexible and can be accumulated. </p>
                       <p className="mb-0 text-lg text-start">
                         Hotline support 24/7
                       </p>
-                    </li>
+                    </li> */}
                   </ul>
-                  <Link href={"/payment-method/basic/" + activeButton} className="btn-outline  font-semibold">
+                  <Link href={"/payment-method/basic/" + activeButton} className="w-full rounded-lg btn-outline bg-primary text-white :bg-primary-400 justify-center  font-semibold">
                     Choose Plan
                   </Link>
                 </div>
               </div>
             </div>
-            <div className="col-span-12 md:col-span-6 lg:col-span-4 m-3">
-              <div className="bg-primary p-6 ">
+            <div className="col-span-12 md:col-span-6 lg:col-span-4 m-3 h-full">
+              <div className="bg-primary p-6 h-600">
                 <div className="text-center">
-                  <div className="grid place-content-center w-20 h-20 rounded-full bg-[var(--tertiary)] mb-3 mx-auto">
+                  {/* <div className="grid place-content-center w-20 h-20 rounded-full bg-[var(--tertiary)] mb-3 mx-auto">
                     <Image
                       width={56}
                       height={56}
@@ -195,105 +197,97 @@ These working hours are flexible and can be accumulated. </p>
                       alt="image"
                       className=""
                     />
-                  </div>
-                  <p className="mb-0 text-2xl font-medium text-[var(--tertiary)]">
+                  </div> */}
+                  <p className="mb-0 text-2xl font-medium text-white">
                     Standard
                   </p>
                   <div className="border border-dashed mt-8 mb-4"></div>
-                  <h1 className="h2 text-[var(--tertiary)] mb-2 text-xl">{ 5000*activeButton} FCFA / {activeButton} month </h1>
+                  <h1 className="h2 text-white mb-2 text-xl">{ 5000*activeButton} FCFA / {activeButton} month </h1>
                   <p className="m-1 text-white">
-                  Ideal for increasing your earnings. Enjoy priority in ride requests and enhanced visibility among clients.                    </p>
+                  {standart.content}                    </p>
                   <div className="border border-dashed mt-4 mb-8"></div>
                   <ul className="flex flex-col gap-4 max-text-30 mx-auto mb-8">
                     <li className="flex items-center text-2xl gap-2">
-                      <i className="las la-check-circle text-[var(--tertiary)]"></i>
+                      <i className="las la-check-circle text-white"></i>
                       <p className="mb-0 text-lg text-white text-start">
-                      All the benefits of the basic package are included.                      </p>
+                      {standart.description[0]}                      </p>
                     </li>
                     <li className="flex items-center text-2xl gap-2">
-                      <i className="las la-check-circle text-[var(--tertiary)]"></i>
+                      <i className="las la-check-circle text-white"></i>
                       <p className="mb-0 text-lg text-white text-start">
-                        Legal support increasing as earning fidelity points
+                      {standart.description[1]}   
                       </p>
                     </li>
                     <li className="flex items-center text-2xl gap-2">
-                      <i className="las la-check-circle text-[var(--tertiary)]"></i>
+                      <i className="las la-check-circle text-white"></i>
                       <p className="mb-0 text-lg text-white text-start">
-                      Work hours on the platform are set at a duration of 12 hours.
+                      {standart.description[2]}   
                                             </p>
                     </li>
-                    <li className="flex items-center text-2xl gap-2">
-                      <i className="las la-check-circle text-[var(--tertiary)]"></i>
+                    {/* <li className="flex items-center text-2xl gap-2">
+                      <i className="las la-check-circle text-white"></i>
                       <p className="mb-0 text-lg text-white text-start">
                       Profile with increased visibility in customer searches.                                            </p>
-                    </li>
-                    <li className="flex items-center text-2xl gap-2">
-                      <i className="las la-check-circle text-[var(--tertiary)]"></i>
+                    </li> */}
+                    {/* <li className="flex items-center text-2xl gap-2">
+                      <i className="las la-check-circle text-white"></i>
                       <p className="mb-0 text-lg text-white text-start">
                       You have the possibility to have a two-star car and receive increased assistance with maintenance.
                        </p>
-                    </li>
+                    </li> */}
                     
 
-                    <li className="flex items-center text-2xl gap-2">
-                      <i className="las la-check-circle text-[var(--tertiary)]"></i>
+                    {/* <li className="flex items-center text-2xl gap-2">
+                      <i className="las la-check-circle text-white"></i>
                       <p className="mb-0 text-lg text-white text-start">
                         Marketing support
                       </p>
-                    </li>
-                    <li className="flex items-center text-2xl gap-2">
+                    </li> */}
+                    {/* <li className="flex items-center text-2xl gap-2">
                       <i className="las la-times-circle text-[#ED5050]"></i>
                       <p className="mb-0 text-lg text-white text-start">
                         Hotline support 24/7
                       </p>
-                    </li>
+                    </li> */}
                   </ul>
-                  <Link href={"/payment-method/premium/" + activeButton} className="btn-outline  bg-[var(--tertiary)]">
+                  <Link href={"/payment-method/standart/" + activeButton} className="btn-outline  bg-white text-primary w-full rounded-lg justify-center">
                     Choose Plan
                   </Link>
                 </div>
               </div>
             </div>
-            <div className="col-span-12 md:col-span-6 lg:col-span-4 m-3">
-              <div className="bg-[var(--dark)] p-6 text-yellow-500" >
-                <div className="text-center">
-                  <div className="grid place-content-center w-20 h-20 rounded-full bg-[var(--tertiary)] mb-3 mx-auto">
-                    <Image
-                      width={56}
-                      height={56}
-                      src="/img/pricing-icon-3.png"
-                      alt="image"
-                      className=""
-                    />
-                  </div>
-                  <p className="mb-0 text-2xl font-medium text-yellow-500">
+            <div className="col-span-12 md:col-span-6 lg:col-span-4 m-3 h-full">
+              <div className="p-6 bg-white h-full" >
+                <div className="text-center text-black">
+                 
+                  <p className="mb-0 text-2xl font-medium ">
                     Premium
                   </p>
                   <div className="border border-dashed mt-8 mb-4"></div>
-                  <h1 className="h2 text-[var(--tertiary)] mb-2 text-xl"> { 10000*activeButton} FCFA / {activeButton} month </h1>
+                  <h1 className="h2  mb-2 text-xl"> { 10000*activeButton} FCFA / {activeButton} month </h1>
                   <p className="m-1">
-                  The best choice to maximize your earnings. Access exclusive rides and clients, as well as a VIP vehicle.
+                  {premium.content}   
                   </p>
                   <div className="border border-dashed mt-4 mb-8"></div>
                   <ul className="flex flex-col gap-4 max-text-30 mx-auto mb-8">
                     <li className="flex items-center text-2xl gap-2">
-                      <i className="las la-check-circle text-[var--primary)]"></i>
+                      <i className="las la-check-circle text-primary"></i>
                       <p className="mb-0 text-lg text-start">
-                      All the benefits of both the basic and standard packages are included.                      </p>
+                      {premium.description[0]}                        </p>
                     </li>
                     <li className="flex items-center text-2xl gap-2">
-                      <i className="las la-check-circle text-[var--primary)]"></i>
+                      <i className="las la-check-circle text-primary"></i>
                       <p className="mb-0 text-lg text-start">
-                      A high-quality VIP service vehicle is made available to you.
+                      {premium.description[1]}   
                        </p>
                                           </li>
                     <li className="flex items-center text-2xl gap-2">
-                      <i className="las la-check-circle text-[var--primary)]"></i>
+                      <i className="las la-check-circle text-primary"></i>
                       <p className="mb-0 text-lg text-start">
-                      Unlimited and flexible work hours on the platform without any restrictions or limitations. 
+                      {premium.description[0]}    
                                            </p>
                     </li>
-                    <li className="flex items-center text-2xl gap-2">
+                    {/* <li className="flex items-center text-2xl gap-2">
                       <i className="las la-check-circle text-[var--primary)]"></i>
                       <p className="mb-0 text-lg text-start"> Legal support </p>
                     </li>
@@ -314,9 +308,9 @@ These working hours are flexible and can be accumulated. </p>
                       <p className="mb-0 text-lg text-start">
                         Hotline support 24/7
                       </p>
-                    </li>
+                    </li> */}
                   </ul>
-                  <Link href={"/payment-method/premium/" + activeButton} className="btn-outline  font-semibold text-[var(--tertiary)]">
+                  <Link href={"/payment-method/premium/" + activeButton} className="btn-outline bg-primary  font-semibold text-white w-full rounded-lg justify-center">
                     Choose Plan
                   </Link>
                 </div>
