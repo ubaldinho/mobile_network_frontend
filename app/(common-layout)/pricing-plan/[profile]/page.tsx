@@ -1,32 +1,27 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
-import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import PaySwitch from "@/components/PaySwitch";
 import SubHeadingBtn from "@/components/SubHeadingBtn";
 import _features from "@/datas/features";
-import brand1 from "@/public/img/brand-1.png";
-import brand2 from "@/public/img/brand-2.png";
-import brand3 from "@/public/img/brand-3.png";
-import branh2 from "@/public/img/brand-4.png";
-import brand5 from "@/public/img/brand-5.png";
-import brand6 from "@/public/img/brand-6.png";
-import brand7 from "@/public/img/brand-7.png";
-import brand8 from "@/public/img/brand-8.png";
-import brand9 from "@/public/img/brand-9.png";
+import profiles from "@/datas/profiles";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
-import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-const Page = ({params}: {params : {nature : string} }) => {
+const Page = ({params}: {params : {profile: number} }) => {
   const [activeButton, setActiveButton] = useState(0);
-const basic = _features["basic"]
-const standart = _features["standart"]
-const premium = _features["premium"]
+  //const profile = 1;
+  console.log(params.profile);
+  
+  const features = _features[params.profile]
+  console.log(_features[params.profile])
+const basic = features["basic"]
+const standart = features["standart"]
+const premium = features["premium"]
   const handleButtonClick = (index: number) => {
     setActiveButton(index);
   };
@@ -39,7 +34,7 @@ const premium = _features["premium"]
     }
   };
 
-const terms = params.nature.replaceAll('_', ' ')
+const terms = profiles[params.profile].url.replaceAll('-',' ')
   return (
     <main>
       <div className="py-[5px] lg:py-[20px] bg-[var(--bg-2)] overflow-hidden px-3">
@@ -123,8 +118,8 @@ const terms = params.nature.replaceAll('_', ' ')
         </div>
         <div className="container">
           <div className="grid grid-cols-12 g-3 md:gap-0 overflow-hidden">
-            <div className="col-span-12 md:col-span-6 lg:col-span-4 m-3 h-800">
-              <div className="bg-white p-6">
+            <div className="col-span-12 md:col-span-6 lg:col-span-4 m-3 h-full">
+              <div className="bg-white p-6 h-full">
                 <div className="text-center">
                   {/* <div className="grid place-content-center w-20 h-20 rounded-full bg-[var(--bg-2)] mb-3 mx-auto">
                     <Image
@@ -180,14 +175,14 @@ const terms = params.nature.replaceAll('_', ' ')
                       </p>
                     </li> */}
                   </ul>
-                  <Link href={"/payment-method/basic/" + activeButton} className="w-full rounded-lg btn-outline bg-primary text-white :bg-primary-400 justify-center  font-semibold">
+                  <Link href={"/payment-method/basic/" + activeButton} className="w-full rounded-lg btn-outline bg-primary hover:text-xl text-white :bg-primary-400 justify-center  font-semibold">
                     Choose Plan
                   </Link>
                 </div>
               </div>
             </div>
             <div className="col-span-12 md:col-span-6 lg:col-span-4 m-3 h-full">
-              <div className="bg-primary p-6 h-600">
+              <div className="bg-primary p-6 h-full">
                 <div className="text-center">
                   {/* <div className="grid place-content-center w-20 h-20 rounded-full bg-[var(--tertiary)] mb-3 mx-auto">
                     <Image
@@ -250,7 +245,7 @@ const terms = params.nature.replaceAll('_', ' ')
                       </p>
                     </li> */}
                   </ul>
-                  <Link href={"/payment-method/standart/" + activeButton} className="btn-outline  bg-white text-primary w-full rounded-lg justify-center">
+                  <Link href={"/payment-method/standart/" + activeButton} className="btn-outline  bg-white hover:bg-white hover:text-xl hover:text-primary text-primary w-full rounded-lg justify-center">
                     Choose Plan
                   </Link>
                 </div>
@@ -258,7 +253,7 @@ const terms = params.nature.replaceAll('_', ' ')
             </div>
             <div className="col-span-12 md:col-span-6 lg:col-span-4 m-3 h-full">
               <div className="p-6 bg-white h-full" >
-                <div className="text-center text-black">
+                <div className="text-center text-black relative" >
                  
                   <p className="mb-0 text-2xl font-medium ">
                     Premium
@@ -310,7 +305,7 @@ const terms = params.nature.replaceAll('_', ' ')
                       </p>
                     </li> */}
                   </ul>
-                  <Link href={"/payment-method/premium/" + activeButton} className="btn-outline bg-primary  font-semibold text-white w-full rounded-lg justify-center">
+                  <Link href={"/payment-method/premium/" + activeButton} className="btn-outline bg-primary hover:text-xl  font-semibold text-white w-full rounded-lg justify-center  bottom-10">
                     Choose Plan
                   </Link>
                 </div>
@@ -327,7 +322,7 @@ const terms = params.nature.replaceAll('_', ' ')
                     Meet Our Valued Partner
                     <ArrowRightIcon className="w-5 h-5" />
                   </h5>
-                  <Swiper
+                  {/* <Swiper
                     loop={true}
                     slidesPerView="auto"
                     spaceBetween={20}
@@ -389,7 +384,7 @@ const terms = params.nature.replaceAll('_', ' ')
                     <SwiperSlide className="swiper-slide">
                       <Image src={brand6} alt="image" className="" />
                     </SwiperSlide>
-                  </Swiper>
+                  </Swiper> */}
                 </div>
               </div>
             </div>

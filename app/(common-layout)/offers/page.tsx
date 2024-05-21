@@ -7,13 +7,15 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 // import required modules
-import { Navigation } from "swiper";
-import Link from "next/link";
+import DropDownButton from "@/components/tests/DropDownButton";
+import AppTest from "@/components/tests/Informer";
 import {
   ArrowLongRightIcon,
   ChevronLeftIcon,
   ChevronRightIcon,
 } from "@heroicons/react/24/outline";
+import Link from "next/link";
+import { Navigation } from "swiper";
 
 const Page = () => {
   return (
@@ -63,6 +65,9 @@ const Page = () => {
           <ChevronRightIcon className="w-5 h-5" />
         </div>
       </Swiper>
+
+<DropDownButton label="overflow"><AppTest></AppTest></DropDownButton>
+
       <div className="overflow-x-auto my-10 lg:my-14">
         <table className="table-auto w-full text-left">
           <thead>
