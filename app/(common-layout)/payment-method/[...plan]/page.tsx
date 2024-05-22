@@ -5,15 +5,17 @@ import Link from "next/link";
 import { useState } from "react";
 
 const Page = ({ params }: { params: { plan: string[] } }) => {
-  const choice = params.plan[0];
-  const months = parseInt(params.plan[1]);
+   ;
+  const profile = parseInt(params.plan[0]);
+  const choice =(_features [profile])[params.plan[1]]
+  const months = parseInt(params.plan[2]);
 
-  const myfeatures = _features[choice].description;
+  const myfeatures = choice.description;
   const transaction_id = "20p524";
   const date = new Date(Date.now());
   const subscription_date = date.toLocaleString();
   const tax = 4;
-  const subtotal = _features[choice].prix * months;
+  const subtotal = choice.prix * months;
   const service_charge = 10;
   const promo_discount = 20;
   const expiryDate = new Date();
@@ -36,7 +38,7 @@ total_payable_amount= parseFloat(total_payable_amount.toFixed(3))
             <div className="pb-lg-0">
               <div className="bg-white rounded-2xl p-3 sm:p-4 lg:p-6 mb-6">
                 <div className="flex items-center justify-between gap-5 mb-1">
-                <span className="mb-0 text-xl font-bold"> {choice.toUpperCase()} Plan </span>
+                <span className="mb-0 text-xl font-bold"> {choice.title.toUpperCase()} Plan </span>
                 <span className="m-4 px-4 mb-3 text-xl font-semibold">
                       {total_payable_amount} FCFA / {months==1 ? "mois" : months==3? 'trimestre':'An' } 
                     </span>

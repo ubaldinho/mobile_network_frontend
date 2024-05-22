@@ -175,7 +175,7 @@ const terms = profiles[params.profile].url.replaceAll('-',' ')
                       </p>
                     </li> */}
                   </ul>
-                  <Link href={"/payment-method/basic/" + activeButton} className="w-full rounded-lg btn-outline bg-primary hover:text-xl text-white :bg-primary-400 justify-center  font-semibold">
+                  <Link href={"/payment-method/" + params.profile + "/basic/" + activeButton} className="w-full rounded-lg btn-outline bg-primary hover:text-xl text-white :bg-primary-400 justify-center  font-semibold">
                     Choose Plan
                   </Link>
                 </div>
@@ -245,7 +245,7 @@ const terms = profiles[params.profile].url.replaceAll('-',' ')
                       </p>
                     </li> */}
                   </ul>
-                  <Link href={"/payment-method/standart/" + activeButton} className="btn-outline  bg-white hover:bg-white hover:text-xl hover:text-primary text-primary w-full rounded-lg justify-center">
+                  <Link href={"/payment-method/" + params.profile + "/standart/" + activeButton} className="btn-outline  bg-white hover:bg-white hover:text-xl hover:text-primary text-primary w-full rounded-lg justify-center">
                     Choose Plan
                   </Link>
                 </div>
@@ -305,7 +305,7 @@ const terms = profiles[params.profile].url.replaceAll('-',' ')
                       </p>
                     </li> */}
                   </ul>
-                  <Link href={"/payment-method/premium/" + activeButton} className="btn-outline bg-primary hover:text-xl  font-semibold text-white w-full rounded-lg justify-center  bottom-10">
+                  <Link href={"/payment-method/" + params.profile + "/premium/" + activeButton} className="btn-outline bg-primary hover:text-xl  font-semibold text-white w-full rounded-lg justify-center  bottom-10">
                     Choose Plan
                   </Link>
                 </div>
