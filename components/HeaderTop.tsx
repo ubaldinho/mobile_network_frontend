@@ -6,22 +6,17 @@ const HeaderTop = () => {
     <div className="bg-[var(--bg-1)] border-b lg:border-b-0">
       <div className="container mx-auto flex justify-between py-3 lg:py-5 gap-1">
         <Link href="/" className="flex items-center">
-          <Image
-            src="/img/logo.png"
-            className="self-center hidden xl:block"
-            width={172}
-            height={48}
-            alt="logo"
-            priority
-          />
-          <Image
-            src="/img/favicon.png"
-            className="self-center xl:hidden w-[40px] h-[40px] ml-3"
-            width={56}
-            height={40}
-            alt="logo"
-            priority
-          />
+          
+          <i className="las la-bus text-[50px] mx-2 text-[var(--tertiary)]"></i>
+          <span className="text-base sm:text-lg lg:text-xl font-medium sm:font-semibold text-[var(--tertiary)] ">
+        Travell
+      </span>
+      <span className="text-base sm:text-lg lg:text-xl font-medium sm:font-semibold text-[var(--secondary)]">
+        App
+      </span>
+          <i className="las la-bus text-[50px] mx-2 text-[var(--secondary)]"></i>
+
+          
         </Link>
         <div className="flex divide-x-[1px]">
           <div className="flex items-center gap-5 px-2 xl:px-4">

@@ -1,6 +1,6 @@
 import { Menu, Transition } from "@headlessui/react";
-import { Fragment } from "react";
 import Image from "next/image";
+import { Fragment } from "react";
 
 export default function ProfileDropdown() {
   return (
@@ -9,7 +9,7 @@ export default function ProfileDropdown() {
         <Menu.Button className="flex justify-center items-center rounded-full focus:outline-none">
           <Image
             className="rounded-full"
-            src="/img/user-1.jpg"
+            src="/img/user-1.png"
             width={45}
             height={45}
             alt="profile"
