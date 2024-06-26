@@ -2,6 +2,7 @@
 import _features from "@/datas/features";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 const Page = ({ params }: { params: { plan: string[] } }) => {
@@ -21,8 +22,14 @@ const Page = ({ params }: { params: { plan: string[] } }) => {
   const expiryDate = new Date();
 
   expiryDate.setMonth(date.getMonth() + months);
-
+const router = useRouter()
   const [isActive, setIsActive] = useState(0);
+  const [addressValidated, validateAddress] = useState(false);
+  const [credentialConfirmed, confirmCredential] = useState(false);
+  const [paymentLaunched,launchPayment] = useState(false);
+  const handleGoBack = () => {
+    router.back()
+  }
 
   let total_payable_amount =
     subtotal *
@@ -30,6 +37,84 @@ const Page = ({ params }: { params: { plan: string[] } }) => {
     (1 + service_charge / 100) *
     (1 - promo_discount / 100);
 total_payable_amount= parseFloat(total_payable_amount.toFixed(3))
+
+  function getPaymentDatas() {
+    /* 
+    type Subscription {
+  id: ID!
+  plan: Plan!
+  user: User!
+  startDate: String!
+  endDate: String!
+  status: SubscriptionStatus!
+  paymentMethod: PaymentMethod!
+}
+
+type Plan {
+  id: ID!
+  name: String!
+  description: String!
+  price: Float!
+  duration: Int! # Durée en jours
+}
+
+type User {
+  id: ID!
+  name: String!
+  email: String!
+  address: String!
+}
+
+enum SubscriptionStatus {
+  ACTIVE
+  CANCELLED
+  EXPIRED
+}
+
+type PaymentMethod {
+  creditCard: CREDIT_CARD!
+  payPal: PAYPAL!
+  mobile: MOBILE!
+}
+
+type MOBILE{
+    operator:String!
+    phone:String!
+}
+
+type PAYPAL{
+    email:String!
+}
+
+type CREDIT_CARD{
+    cardNumber:String!
+    cvv: Int!
+    expiryDate:String!
+}
+
+type Query {
+  subscription(id: ID!): Subscription!
+}
+    */
+  }
+
+  async function  proceedToPayment() : Promise<Boolean> {
+const verdict = true;
+/*  */  
+
+return verdict
+}
+function handleFailure() {
+  
+alert("sectionfail")  }
+
+  function handleSuccess() {
+      const customMsg = "payment succeeded"   
+      alert(customMsg)
+
+
+  }
+
   return (
     <div className="py-[30px] lg:py-[60px] bg-[var(--bg-2)] px-3 font-Inter">
       <div className="container">
@@ -64,6 +149,9 @@ total_payable_amount= parseFloat(total_payable_amount.toFixed(3))
 
                   {}
                 </div>
+                <div>
+      <button onClick={handleGoBack}>Retour</button>
+    </div>
               </div>
 
               <div className="bg-white rounded-2xl p-3 sm:p-4 lg:p-6 mb-6">
@@ -110,7 +198,7 @@ total_payable_amount= parseFloat(total_payable_amount.toFixed(3))
                         className="w-full bg-transparent px-5 py-3 focus:outline-none"
                         aria-label="Default select example"
                       >
-                        <option>Cmameroon</option>
+                        <option>Maroua</option>
                         <option value="1">Yaounde</option>
                         <option value="2">Douala</option>
                         <option value="3">Edea</option>
@@ -126,11 +214,18 @@ total_payable_amount= parseFloat(total_payable_amount.toFixed(3))
                   </div>
                  
                 </div>
-                <Link
-                href="#"
-                className="link inline-flex items-center gap-2 py-3 px-6 rounded-lg bg-primary text-white :bg-primary-400 hover:text-white font-medium w-full justify-center"
+                <Link 
+                href="" legacyBehavior
               >
-                <span className="inline-block"> validate </span>
+                <a 
+                className={`link inline-flex items-center gap-2 py-3 px-6 rounded-lg  text-white :bg-primary-400 hover:text-white font-medium w-full justify-center ${addressValidated? 'bg-neutral-700':"bg-primary"}`}
+
+                onClick={() => {
+                        validateAddress(!addressValidated);
+                      }} >
+                        <span className="inline-block">  {addressValidated? "address validated": 'validate Address'} </span>
+                      </a>
+                
               </Link>
               </div>
             </div>
@@ -346,30 +441,46 @@ total_payable_amount= parseFloat(total_payable_amount.toFixed(3))
 
                   </>
                 ) : (
-                  <div className="grid grid-cols-12 gap-2 lg:gap-1 " >
+                  <div className="grid grid-cols-12 gap-4 lg:gap-6 " >
                     
-                      <div className="col-span-6 m-6">
-                        <label htmlFor=""> first name </label>
-
-                        <input
-                          type="text"
-                          className="h-70 bg-[var(--bg-1)] focus:outline-none border border-neutral-40 rounded-lg py-3 px-5"
-                          placeholder="first name"
-                        />
-                      </div>
-                      <div className="col-span-6 m-6">
-                        <label htmlFor=""> last name </label>
-                        <input
-                          type="text"
-                          className="h-70 bg-[var(--bg-1)] focus:outline-none border border-neutral-40 rounded-lg py-3 px-5"
-                          placeholder="last name"
-                        />
-                      </div>
+                    <div className="col-span-12 md:col-span-6">
+                      <label
+                        htmlFor="expiry-date"
+                        className="text-xl font-medium block mb-3"
+                      >
+                        FIRST NAME
+                      </label>
+                      <input
+                        type="text"
+                        className="w-full bg-[var(--bg-1)] focus:outline-none border border-neutral-40 rounded-lg py-3 px-5"
+                        placeholder="UBALDI"
+                        id="expiry-date"
+                      />
+                    </div>
+                    <div className="col-span-12 md:col-span-6">
+                      <label
+                        htmlFor="cvc"
+                        className="text-xl font-medium block mb-3"
+                      >
+                        LAST NAME
+                      </label>
+                      <input
+                        type="text"
+                        className="w-full bg-[var(--bg-1)] focus:outline-none border border-neutral-40 rounded-lg py-3 px-5"
+                        placeholder="UBALDINI"
+                        id="cvc"
+                      />
+                    </div>
                     
                     <div className="col-span-12 flex gap-3 h-70 bg-[var(--bg-1)] focus:outline-none border border-neutral-40 rounded-lg py-3 px-5"
 
                     >
-                      <img src="/img/cameroon-flag.png" alt="Cameroon" />
+                      <Image
+                        src={"/img/cameroon.jpeg"}
+                        alt="Icone"
+                        width={30}
+                        height={30}
+                      />
                       <input
                       type="text"
                       placeholder="+237 699 71 87 51"
@@ -380,11 +491,18 @@ total_payable_amount= parseFloat(total_payable_amount.toFixed(3))
                     
                   </div>
                 )}
-                <Link
-                href="#"
-                className="mt-4 link inline-flex items-center gap-2 py-3 px-6 rounded-full bg-primary text-white :bg-primary-400 hover:text-white font-medium w-full justify-center"
+                <Link 
+                href="" legacyBehavior
               >
-                <span className="inline-block">Confirm </span>
+                <a 
+                className={`link inline-flex items-center gap-2 py-3 px-6 rounded-lg  text-white :bg-primary-400 hover:text-white font-medium w-full justify-center ${credentialConfirmed? 'bg-neutral-700':"bg-primary"}`}
+
+                onClick={() => {
+                        confirmCredential(!credentialConfirmed);
+                      }} >
+                        <span className="inline-block">  {credentialConfirmed? "Credentials confirled": 'confirm credentials'} </span>
+                      </a>
+                
               </Link>
             </div>
 
@@ -430,11 +548,29 @@ total_payable_amount= parseFloat(total_payable_amount.toFixed(3))
                 <p className="mb-0">Payable Now</p>
                 <p className="mb-0 font-medium">{total_payable_amount} FCFA</p>
               </div>
-              <Link
-                href="#"
-                className="link inline-flex items-center gap-2 py-3 px-6 rounded-full bg-primary text-white :bg-primary-400 hover:text-white font-medium w-full justify-center active:animate-bounce"
+              <Link 
+                href="" legacyBehavior
               >
-                <span className="inline-block"> Launch Payment </span>
+                <a 
+                className={`link inline-flex items-center gap-2 py-3 px-6 rounded-lg  text-white :bg-primary-400 hover:text-white font-medium w-full justify-center ${paymentLaunched? 'bg-neutral-700':"bg-primary"}`}
+                      
+                onClick={async () => {
+                  if(addressValidated && credentialConfirmed){
+                    const infos = getPaymentDatas()
+                    const result = await proceedToPayment()
+                    result? handleSuccess() : handleFailure()
+                  }
+                  if(!credentialConfirmed){
+                    alert("you must confirm your credentials !")
+                  }else{
+                    if(!addressValidated){
+                      alert("you must validate your address!")
+                    }
+                  }
+                      }} >
+                        <span className="inline-block">  {paymentLaunched? "payment on process ... waiting for response": 'launch payment'} </span>
+                      </a>
+                
               </Link>
             </div>
 

@@ -1,11 +1,11 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
-import Popup from "@/components/PopUpPay";
 import DropDownButton from "@/components/tests/DropDownButton";
 import Link from "next/link";
 
 import profiles from "@/datas/profiles";
 // Import Swiper styles
+import SubHeadingBtn from "@/components/SubHeadingBtn";
 import { useState } from "react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -24,14 +24,21 @@ export default function MyPage() {
 
   return (
     <div className="justify-center items-center p-6">
-      <button
+      <h2 className="h2 mt-4 mb-8 w-full p-5 flex items-center justify-center leading-snug">
+              HERE ARE POSSIBLE PROFILES
+            </h2>
+      <SubHeadingBtn text="All Profiles" classes="bg-white" />
+            <h2 className="h2 mt-4 mb-8 max-w-[600px] leading-snug">
+              Select Your Profile 
+            </h2>
+      {/* <button
         className="p-2 bg-primary text-white rounded-lg m-4 w-full"
         onClick={handleOpenPopup}
       >
         Appuyez pour afficher la fenêtre pop-up
       </button>
 
-      <Popup open={isPopupOpen} onClose={handleClosePopup} width="800px" height="600px" position="top-left" />
+      <Popup open={isPopupOpen} onClose={handleClosePopup} width="800px" height="600px" position="top-left" /> */}
       <div className="gap-8">
       {myprofiles.map(
         (profile)=>(

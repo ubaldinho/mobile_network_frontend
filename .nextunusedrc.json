@@ -1,0 +1,16 @@
+{
+    "scripts": {
+      "unused": "next-unused"
+    },
+    "include": [
+      "components/**/*.{js,ts,jsx,tsx,mdx}",
+      "pages/**/*.{js,ts,jsx,tsx,mdx}",
+      "pages/**/*.{js,ts,jsx,tsx,png,jpg"
+
+    ],
+    "exclude": [
+      "node_modules",
+      ".next"
+    ],
+    "rootDir": "."
+  }

@@ -1,0 +1,24 @@
+ [
+    {
+              "paymentCode": "0000NRJ4",
+              "author":"Ubaldi",
+              "cardNumber":"00023020215AZE",
+              "offer":"Driver-Only/Standart",
+              "amount":5000,
+              "date":"10-12-2022",
+              "validity":"6"
+
+    },
+    {
+        "paymentCode": "0000NRJ1",
+        "author":"Ubaldini",
+        "cardNumber":"00033020215AZE",
+        "offer":"Driver-with-Vehicle/Basic",
+        "amount":5000,
+        "date":"10-12-2023",
+        "validity":"3"
+
+}
+
+]
+

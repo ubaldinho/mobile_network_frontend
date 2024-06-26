@@ -5,8 +5,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Placewise - Online Booking NextJS Template",
-  description: "A nextjs template for online booking system",
+  title: "Transport App",
+  description: "school project",
 };
 
 export default function RootLayout({

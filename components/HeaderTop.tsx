@@ -25,9 +25,16 @@ const HeaderTop = () => {
         </Link>
         <div className="flex divide-x-[1px]">
           <div className="flex items-center gap-5 px-2 xl:px-4">
-            <img src="/img/whatsapp-icon.png" alt="oups!" className="w-50 h-50"></img>
+          <Image
+            src="/img/whatsapp-logo.png"
+            className="self-center  w-[40px] h-[40px] ml-3"
+            width={56}
+            height={40}
+            alt="logo"
+            priority
+          />
             <div className="flex-col hidden lg:flex">
-              <span className="text-xs"> Whatsapp Message</span>
+              <span className="text-xs"> Whatsapp Messenger</span>
               <Link href="tel:+237 653251792" className="text-base">
                 (+237) 653251792
               </Link>
@@ -50,8 +57,8 @@ const HeaderTop = () => {
             </div>
           </div>
         </div>
-        <Link href="/Mobile-App" className="btn-primary-lg hidden md:block">
-          Mobile App
+        <Link href="/pricing-plan" className="btn-primary-lg hidden md:block">
+          Subscribe
         </Link>
       </div>
     </div>
