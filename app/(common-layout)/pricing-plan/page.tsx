@@ -29,10 +29,10 @@ export default function MyPage() {
             ALL PROFILES
           </h1>
         </div>
-      <SubHeadingBtn text="All Profiles" classes="bg-white" />
-            <h2 className="h2 mt-4 mb-8 max-w-[600px] leading-snug">
-              Select Your Profile 
-            </h2>
+        
+        <div className="flex  justify-center items-center p-6">
+        <SubHeadingBtn text="Select your profile" classes="bg-white" />
+        </div>
       {/* <button
         className="p-2 bg-primary text-white rounded-lg m-4 w-full"
         onClick={handleOpenPopup}
