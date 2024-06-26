@@ -2,7 +2,6 @@
 import CommonHeader from "@/components/CommonHeader";
 import Footer from "@/components/Footer";
 import HeaderTop from "@/components/HeaderTop";
-import MobileMenu from "@/components/MobileMenu";
 import Authors from "@/components/home-1/Authors";
 
 export default function Home() {
@@ -10,7 +9,6 @@ export default function Home() {
     <main>
       <HeaderTop />
       <CommonHeader />
-      <MobileMenu />
       
       
       <Authors /> 
