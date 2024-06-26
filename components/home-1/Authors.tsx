@@ -10,9 +10,11 @@ import "swiper/css/navigation";
 const Authors = () => {
   return (
     <section className="bg-white pt-[20px] lg:pt-[20px] px-3 xl:px-0 py-5">
-      <h1 className="h1 mt-4 mb-8 max-w-[600px] leading-snug">
-              SUBSCRIPTION SERVICE HOME
-            </h1>
+       <div className="mx-5 p-8 mb-5 bg-[var(--primary-light)]" >
+          <h1 className="text-center text-4xl text-[var(--neutral-700)] font-bold leading-tight tracking-tight font-inter">
+            SUBBSCRITON SERVICE HOME
+          </h1>
+        </div>
       
           <div className="xl:pl-[90px] px-3 ">
             <SubHeadingBtn text="Call To Action" classes="bg-white" />

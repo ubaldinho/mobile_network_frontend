@@ -24,9 +24,11 @@ export default function MyPage() {
 
   return (
     <div className="justify-center items-center p-6">
-      <h2 className="h2 mt-4 mb-8 w-full p-5 flex items-center justify-center leading-snug">
-              HERE ARE POSSIBLE PROFILES
-            </h2>
+      <div className="mx-5 p-8 mb-5 bg-[var(--primary-light)]" >
+          <h1 className="text-center text-4xl text-[var(--neutral-700)] font-bold leading-tight tracking-tight font-inter">
+            ALL PROFILES
+          </h1>
+        </div>
       <SubHeadingBtn text="All Profiles" classes="bg-white" />
             <h2 className="h2 mt-4 mb-8 max-w-[600px] leading-snug">
               Select Your Profile 
@@ -39,16 +41,17 @@ export default function MyPage() {
       </button>
 
       <Popup open={isPopupOpen} onClose={handleClosePopup} width="800px" height="600px" position="top-left" /> */}
-      <div className="gap-8">
+      <div className="flex flex-wrap justify-center gap-8">
       {myprofiles.map(
         (profile)=>(
-          <div className="m-4"  key = {profile.id}>
-            <DropDownButton label={profile.url.replaceAll('-', ' ').toUpperCase()}  >
+          <div className="m-4 justify-center w-1/4"  key = {profile.id}>
+            <DropDownButton label={profile.url.replaceAll('-', ' ')}  >
         <div className="p-4 relative">
           <p className="w-full min-h-[200px] m-4 p-4 bg-primary-light text-xl">
           {profile.description}
           </p>
-          <Link href={"/pricing-plan/"+ profile.id } className="rounded-full  m-4 p-4 border-2 border-primary hover:bg-primary hover:text-white"> Explore...</Link>
+          <Link href={"/pricing-plan/"+ profile.id } className="rounded-full  m-4 p-4 border-2 border-primary hover:bg-primary hover:text-white"> Explore...                <i className="las la-long-arrow-alt-right text-xl"></i>
+          </Link>
         </div>
       </DropDownButton>
           </div>

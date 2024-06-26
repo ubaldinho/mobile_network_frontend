@@ -61,25 +61,7 @@ const terms = profiles[params.profile].url.replaceAll('-',' ')
               <div className="col-span-12">
                 <div className="flex flex-wrap items-center justify-center gap-4">
                   <div className="flex items-center gap-4">
-                    {/* <span className="inline-block text-xl font-medium clr-neutral-500">
-                      Monthly
-                    </span>
-                    <Switch
-                      checked={enabled}
-                      onChange={setEnabled}
-                      className={`${enabled ? "bg-primary" : "bg-[#EBEBFD]"}
-          relative inline-flex h-[38px] w-[74px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}>
-                      <span className="sr-only">Use setting</span>
-                      <span
-                        aria-hidden="true"
-                        className={`${
-                          enabled
-                            ? "translate-x-9 bg-white"
-                            : "bg-primary translate-x-0"
-                        }
-            pointer-events-none inline-block h-[34px] w-[34px]  transform rounded-full shadow-lg ring-0 transition duration-200 ease-in-out`}
-                      />
-                    </Switch> */ }
+                    
       <div className="flex bg-[var(--primary-light)] rounded">
       <PaySwitch
         label='monthly'
@@ -91,11 +73,7 @@ const terms = profiles[params.profile].url.replaceAll('-',' ')
         onClick={() => handleButtonClick(3)}
         isActive={activeButton === 3}
       />
-      {/* <PaySwitch
-        label="semiannually"
-        onClick={() => handleButtonClick(6)}
-        isActive={activeButton === 6}
-      /> */}
+      
       <PaySwitch
         label="annually"
         onClick={() => handleButtonClick(12)}
@@ -103,14 +81,11 @@ const terms = profiles[params.profile].url.replaceAll('-',' ')
       />
        </div>
 
-                  {//<PaySwitch></PaySwitch>
-                  }
+                  
                  
 
                   </div> 
-                  {/*<span className="block font-medium">
-                    Yearly <span className="clr-primary-400">(Save 30%)</span>
-                  </span> */}
+                  
                 </div>
               </div>
             </div>
@@ -121,15 +96,7 @@ const terms = profiles[params.profile].url.replaceAll('-',' ')
             <div className="col-span-12 md:col-span-6 lg:col-span-4 m-3 h-full">
               <div className="bg-white p-6 h-full">
                 <div className="text-center">
-                  {/* <div className="grid place-content-center w-20 h-20 rounded-full bg-[var(--bg-2)] mb-3 mx-auto">
-                    <Image
-                      width={56}
-                      height={56}
-                      src="/img/pricing-icon-1.png"
-                      alt="image"
-                      className=""
-                    />
-                  </div> */}
+                 
                   <p className="mb-0 text-2xl font-medium text-primary">
                     Basic
                   </p>
@@ -156,24 +123,7 @@ const terms = profiles[params.profile].url.replaceAll('-',' ')
                       {basic.description[2]}
                       </p>
                     </li>
-                    {/* <li className="flex items-center text-2xl gap-2">
-                      <i className="las la-check-circle text-[var--primary)]"></i>
-                      <p className="mb-0 text-lg text-start">
-                      A personalized profile with a photo and vehicle information is provided.
-                      </p>
-                    </li>
-                    <li className="flex items-center text-2xl gap-2">
-                      <i className="las la-times-circle text-[#ED5050]"></i>
-                      <p className="mb-0 text-lg text-start">
-                        Marketing support
-                      </p>
-                    </li>
-                    <li className="flex items-center text-2xl gap-2">
-                      <i className="las la-times-circle text-[#ED5050]"></i>
-                      <p className="mb-0 text-lg text-start">
-                        Hotline support 24/7
-                      </p>
-                    </li> */}
+                    
                   </ul>
                   <Link href={"/payment-method/" + params.profile + "/basic/" + activeButton} className="w-full rounded-lg btn-outline bg-primary hover:text-xl text-white :bg-primary-400 justify-center  font-semibold">
                     Choose Plan
@@ -184,15 +134,7 @@ const terms = profiles[params.profile].url.replaceAll('-',' ')
             <div className="col-span-12 md:col-span-6 lg:col-span-4 m-3 h-full">
               <div className="bg-primary p-6 h-full">
                 <div className="text-center">
-                  {/* <div className="grid place-content-center w-20 h-20 rounded-full bg-[var(--tertiary)] mb-3 mx-auto">
-                    <Image
-                      width={56}
-                      height={56}
-                      src="/img/pricing-icon-2.png"
-                      alt="image"
-                      className=""
-                    />
-                  </div> */}
+                 
                   <p className="mb-0 text-2xl font-medium text-white">
                     Standard
                   </p>
@@ -219,31 +161,7 @@ const terms = profiles[params.profile].url.replaceAll('-',' ')
                       {standart.description[2]}   
                                             </p>
                     </li>
-                    {/* <li className="flex items-center text-2xl gap-2">
-                      <i className="las la-check-circle text-white"></i>
-                      <p className="mb-0 text-lg text-white text-start">
-                      Profile with increased visibility in customer searches.                                            </p>
-                    </li> */}
-                    {/* <li className="flex items-center text-2xl gap-2">
-                      <i className="las la-check-circle text-white"></i>
-                      <p className="mb-0 text-lg text-white text-start">
-                      You have the possibility to have a two-star car and receive increased assistance with maintenance.
-                       </p>
-                    </li> */}
                     
-
-                    {/* <li className="flex items-center text-2xl gap-2">
-                      <i className="las la-check-circle text-white"></i>
-                      <p className="mb-0 text-lg text-white text-start">
-                        Marketing support
-                      </p>
-                    </li> */}
-                    {/* <li className="flex items-center text-2xl gap-2">
-                      <i className="las la-times-circle text-[#ED5050]"></i>
-                      <p className="mb-0 text-lg text-white text-start">
-                        Hotline support 24/7
-                      </p>
-                    </li> */}
                   </ul>
                   <Link href={"/payment-method/" + params.profile + "/standart/" + activeButton} className="btn-outline  bg-white hover:bg-white hover:text-xl hover:text-primary text-primary w-full rounded-lg justify-center">
                     Choose Plan
@@ -282,28 +200,7 @@ const terms = profiles[params.profile].url.replaceAll('-',' ')
                       {premium.description[0]}    
                                            </p>
                     </li>
-                    {/* <li className="flex items-center text-2xl gap-2">
-                      <i className="las la-check-circle text-[var--primary)]"></i>
-                      <p className="mb-0 text-lg text-start"> Legal support </p>
-                    </li>
-                    <li className="flex items-center text-2xl gap-2">
-                      <i className="las la-check-circle text-[var--primary)]"></i>
-                      <p className="mb-0 text-lg text-start">
-                        Technology support at it's best
-                      </p>
-                    </li>
-                    <li className="flex items-center text-2xl gap-2">
-                      <i className="las la-check-circle text-[var--primary)]"></i>
-                      <p className="mb-0 text-lg text-start">
-                        Marketing support
-                      </p>
-                    </li>
-                    <li className="flex items-center text-2xl gap-2">
-                      <i className="las la-check-circle text-[var--primary)]"></i>
-                      <p className="mb-0 text-lg text-start">
-                        Hotline support 24/7
-                      </p>
-                    </li> */}
+                    
                   </ul>
                   <Link href={"/payment-method/" + params.profile + "/premium/" + activeButton} className="btn-outline bg-primary hover:text-xl  font-semibold text-white w-full rounded-lg justify-center  bottom-10">
                     Choose Plan
@@ -322,82 +219,14 @@ const terms = profiles[params.profile].url.replaceAll('-',' ')
                     Meet Our Valued Partner
                     <ArrowRightIcon className="w-5 h-5" />
                   </h5>
-                  {/* <Swiper
-                    loop={true}
-                    slidesPerView="auto"
-                    spaceBetween={20}
-                    breakpoints={{
-                      375: {
-                        slidesPerView: 2,
-                      },
-                      768: {
-                        slidesPerView: 3,
-                      },
-                      992: {
-                        slidesPerView: 4,
-                      },
-                      1200: {
-                        slidesPerView: 6,
-                        centeredSlides: true,
-                        centeredSlidesBounds: true,
-                      },
-                      1920: {
-                        slidesPerView: 7,
-                        centeredSlides: true,
-                        centeredSlidesBounds: true,
-                      },
-                    }}
-                    className="min-[1900px]:!mr-[-400px]">
-                    <SwiperSlide className="swiper-slide">
-                      <Image src={brand1} alt="image" className="" />
-                    </SwiperSlide>
-                    <SwiperSlide className="swiper-slide">
-                      <Image src={brand2} alt="image" className="" />
-                    </SwiperSlide>
-                    <SwiperSlide className="swiper-slide">
-                      <Image src={brand3} alt="image" className="" />
-                    </SwiperSlide>
-                    <SwiperSlide className="swiper-slide">
-                      <Image src={branh2} alt="image" className="" />
-                    </SwiperSlide>
-                    <SwiperSlide className="swiper-slide">
-                      <Image src={brand5} alt="image" className="" />
-                    </SwiperSlide>
-                    <SwiperSlide className="swiper-slide">
-                      <Image src={brand6} alt="image" className="" />
-                    </SwiperSlide>
-                    <SwiperSlide className="swiper-slide">
-                      <Image src={brand7} alt="image" className="" />
-                    </SwiperSlide>
-                    <SwiperSlide className="swiper-slide">
-                      <Image src={brand8} alt="image" className="" />
-                    </SwiperSlide>
-                    <SwiperSlide className="swiper-slide">
-                      <Image src={brand9} alt="image" className="" />
-                    </SwiperSlide>
-                    <SwiperSlide className="swiper-slide">
-                      <Image src={brand1} alt="image" className="" />
-                    </SwiperSlide>
-                    <SwiperSlide className="swiper-slide">
-                      <Image src={brand5} alt="image" className="" />
-                    </SwiperSlide>
-                    <SwiperSlide className="swiper-slide">
-                      <Image src={brand6} alt="image" className="" />
-                    </SwiperSlide>
-                  </Swiper> */}
+                  
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      {/* <!-- /Pricing Plan --> */}
-      {/* <!-- Service --> */}
       
-      {/* <!-- /Service --> */}
-      {/* <!-- Explore Property --> */}
-      
-      {/* Faq */}
     </main>
   );
 };
